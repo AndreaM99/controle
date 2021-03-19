@@ -67,3 +67,19 @@ for onote in onotes:
 for onote in onotes:
   onote.afficher() # beaucoup plus jolie ! merci afficher() 
 
+print("-- Question 6 --")
+class Note:
+  def __init__(self, eleve, matiere, valeur): #La méthode pour créer un objet
+    self.eleve = eleve
+    self.matiere = matiere
+    self.valeur = valeur
+
+
+  def __str__(self):
+    return f"{self.__class__.__name__}('{self.eleve}','{self.matiere}','{self.valeur}')"
+
+onote = Note('eleve1', 'maths', 13)
+print(onote.eleve)
+print(onote.matiere)
+print(onote.valeur)
+print(onote)
