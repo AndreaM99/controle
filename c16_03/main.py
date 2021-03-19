@@ -113,3 +113,58 @@ def moyenne_notes(notes, eleve = None, matiere = None):
 onotes = [Note(a,b,c) for a,b,c in notes]
 print(moyenne_notes(onotes))
 print(moyenne_notes(onotes, 'eleve1', 'math'))
+
+print("-- Question 9 --")
+class Demo:
+  classattr = 'defaut'
+  def __init__(self, a):
+    self.a = a
+
+
+demo1 = Demo(1)
+demo2 = Demo(2)
+
+print(demo1.a)
+print(demo2.a)
+print(Demo.classattr)
+print(demo1.classattr)
+print(demo2.classattr)
+
+Demo.classattr = 23
+
+print(demo1.classattr)
+print(demo2.classattr)
+
+demo1.classattr = -1
+
+print(Demo.classattr)
+print(demo1.classattr)
+print(demo2.classattr)
+
+Demo.classattr = 14
+
+print(Demo.classattr)
+print(demo1.classattr) # aïe toujours -1 :(
+print(demo2.classattr)
+
+class Note:
+  instances = []
+  def __init__(self, eleve, matiere, valeur): #La méthode pour créer un objet
+    self.eleve = eleve
+    self.matiere = matiere
+    self.valeur = valeur
+    
+    self.instances.append(self) 
+
+  def __str__(self):
+    return f"{self.__class__.__name__}('{self.eleve}','{self.matiere}','{self.valeur}')"
+
+  @classmethod #attention !
+  def default_len(cls):
+    return len(cls.instances)
+
+print(Note.default_len()) # 0
+
+onotes = [Note(a,b,c) for a,b,c in notes]
+
+print(Note.default_len()) # 8 notes différentes
