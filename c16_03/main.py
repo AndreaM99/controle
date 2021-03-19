@@ -21,3 +21,10 @@ notes_elv1_maths = [n for n in notes_elv1 if n[1] == 'math']
 print(notes_elv1_maths)
 print(sum(n[2] for n in notes_elv1_maths)/len(notes_elv1_maths))
 
+print("-- Question 4 c) --")
+def moyenne_tuple(notes, eleve, matiere):
+  notes_elv = [note for note in notes if note[0] == eleve]
+  notes_elv_matiere = [n for n in notes_elv if n[1] == matiere]
+  return sum([n[2] for n in notes_elv_matiere])/len(notes_elv_matiere)
+
+print(moyenne_tuple(notes,'eleve1','math'))
