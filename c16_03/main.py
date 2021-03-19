@@ -159,7 +159,7 @@ class Note:
   def __str__(self):
     return f"{self.__class__.__name__}('{self.eleve}','{self.matiere}','{self.valeur}')"
 
-  @classmethod #attention !
+  @classmethod 
   def default_len(cls):
     return len(cls.instances)
 
@@ -168,3 +168,42 @@ print(Note.default_len()) # 0
 onotes = [Note(a,b,c) for a,b,c in notes]
 
 print(Note.default_len()) # 8 notes différentes
+
+print("-- Question 10 --")
+class Note:
+  instances = []
+  def __init__(self, eleve, matiere, valeur): #La méthode pour créer un objet
+    self.eleve = eleve
+    self.matiere = matiere
+    self.valeur = valeur
+    
+    self.instances.append(self) # les onotes sont enregistrés là 
+
+  def __str__(self):
+    return f"{self.__class__.__name__}('{self.eleve}','{self.matiere}','{self.valeur}')"
+
+  @classmethod 
+  def vider(cls):
+    cls.instances = []
+
+  @classmethod 
+  def moyenne(cls):
+    return sum(n.valeur for n in cls.instances)/len(cls.instances)
+
+  @classmethod 
+  def default_len(cls):
+    return len(cls.instances)
+
+print(Note.default_len()) # 0
+
+onotes = [Note(a,b,c) for a,b,c in notes]
+
+print(Note.default_len()) # 8 notes différentes
+
+Note.vider() # on vide la liste
+
+print(Note.default_len()) # on retourne à 0 
+
+onotes = [Note(a,b,c) for a,b,c in notes] # on re-déclare
+
+print(Note.moyenne()) # hop la moyenne !
