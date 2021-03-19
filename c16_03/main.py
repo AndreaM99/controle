@@ -38,3 +38,32 @@ def moyenne_tuplealt(notes, eleve = None, matiere = None):
 print(moyenne_tuplealt(notes)) # moyenne totale
 print(moyenne_tuplealt(notes, 'eleve1', 'math'))
 
+print("-- Question 5 --")
+class Note:
+  def __init__(self, eleve, matiere, valeur): #La méthode pour créer un objet
+    self.eleve = eleve
+    self.matiere = matiere
+    self.valeur = valeur
+
+
+  def afficher(self):
+    print('eleve', self.eleve, 'matiere', self.matiere, 'note', self.valeur)
+
+
+onote = Note('eleve1', 'maths', 13)
+print(onote.eleve)
+print(onote.matiere)
+print(onote.valeur)
+Note.afficher(onote)
+
+onote.afficher()
+
+onotes = [Note(a,b,c) for a,b,c in notes]
+print(onotes) # c'est moche...
+print('--')
+for onote in onotes:
+  print(onote) # toujours moche 
+
+for onote in onotes:
+  onote.afficher() # beaucoup plus jolie ! merci afficher() 
+
