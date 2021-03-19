@@ -28,3 +28,13 @@ def moyenne_tuple(notes, eleve, matiere):
   return sum([n[2] for n in notes_elv_matiere])/len(notes_elv_matiere)
 
 print(moyenne_tuple(notes,'eleve1','math'))
+
+def moyenne_tuplealt(notes, eleve = None, matiere = None):
+  notes_elv = [note for note in notes if note[0] == eleve] if eleve is not None else notes
+  notes_elv_matiere = [n for n in notes_elv if n[1] == matiere] if matiere is not None else notes_elv
+
+  return sum([n[2] for n in notes_elv_matiere])/len(notes_elv_matiere)
+
+print(moyenne_tuplealt(notes)) # moyenne totale
+print(moyenne_tuplealt(notes, 'eleve1', 'math'))
+
