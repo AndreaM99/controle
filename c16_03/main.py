@@ -195,10 +195,10 @@ class Note:
     cls.eleve = eleve
     cls.matiere = matiere
     
-    notes_elv = [note for note in notes if cls.eleve == eleve] if eleve is not None else notes
-    notes_elv_matiere = [n for n in notes_elv if cls.matiere == matiere] if matiere is not None else notes_elv
+    notes_elv = [note for note in cls.instances if note.eleve == eleve] if eleve is not None else notes
+    notes_elv_matiere = [n for n in cls.instances if n.matiere == matiere] if matiere is not None else notes_elv
 
-    return sum([n[2] for n in notes_elv_matiere])/len(notes_elv_matiere)
+    return sum([n.matiere for n in notes_elv_matiere])/len(notes_elv_matiere)
     
     
   @classmethod 
