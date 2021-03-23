@@ -1,4 +1,4 @@
-from .main import Note
+from main import Note
 
 note = Note('xx','yy','zzz')
 print(note)
@@ -8,6 +8,7 @@ def test_ajout():
   assert len(Note.instances) == 0
   Note(eleve = 'eleve1', matiere='math', valeur = 12) # quand on commence des mots clés, on les continu !! + Note pas Node.
   assert len(Note.instances) == 1
+  
 
 
 # pip install pytest-cov

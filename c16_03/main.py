@@ -187,9 +187,17 @@ class Note:
     cls.instances = []
 
   @classmethod 
-  def moyenne(cls):
-    return sum(n.valeur for n in cls.instances)/len(cls.instances)
+  def moyenne(cls,eleve=None, matiere=None,valeur=None):
+    cls.eleve = eleve
+    cls.mathiere = matiere
+    cls.valeur = valeur
 
+    notes_elv = [note for note in notes if note.eleve == eleve] if eleve is not None else notes
+    notes_elv_matiere = [n for n in notes_elv if n.matiere == matiere] if matiere is not None else notes_elv
+
+    return sum([n.valeur for n in notes_elv_matiere])/len(notes_elv_matiere)
+
+    
   @classmethod 
   def default_len(cls):
     return len(cls.instances)
@@ -206,4 +214,7 @@ print(Note.default_len()) # on retourne à 0
 
 onotes = [Note(a,b,c) for a,b,c in notes] # on re-déclare
 
-print(Note.moyenne()) # hop la moyenne !
+print(Note.moyenne('eleve1','math')) # hop la moyenne !
+#return sum(n.valeur for n in cls.instances)/len(cls.instances)
+#notes_elv = [note for note in notes if note.eleve == eleve] if eleve is not None else notes
+#notes_elv_matiere = [n for n in notes_elv if n.matiere == matiere] if matiere is not None else notes_elv
