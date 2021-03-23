@@ -187,11 +187,17 @@ class Note:
     cls.instances = []
 
   @classmethod 
-  def moyenne(cls,eleve=None, matiere=None,valeur=None):
-    cls.eleve = eleve
-    cls.mathiere = matiere
-    cls.valeur = valeur
+  def moyenne(cls):
     return sum(n.valeur for n in cls.instances)/len(cls.instances)
+
+  @classmethod
+  def moyennebis(cls, eleve, matiere):
+    cls.eleve = eleve
+    cls.matiere = matiere
+    notes_elv = [note for note in notes if note.eleve == cls.eleve] 
+    notes_elv_matiere = [n for n in notes_elv if n.matiere == cls.matiere] 
+
+    return sum([n.valeur for n in notes_elv_matiere])/len(notes_elv_matiere)
     
     
   @classmethod 
@@ -200,7 +206,7 @@ class Note:
 
 print(Note.default_len()) # 0
 
-onotes = [Note(a,b,c) for a,b,c in notes]
+onotes = [Note(eleve,matiere,valeur) for eleve,matiere,valeur in notes]
 
 print(Note.default_len()) # 8 notes différentes
 
@@ -210,9 +216,10 @@ print(Note.default_len()) # on retourne à 0
 
 onotes = [Note(a,b,c) for a,b,c in notes] # on re-déclare
 
-print(Note.moyenne('eleve1','math')) # hop la moyenne !
+print(Note.moyenne())
+print(Note.moyennebis('eleve1','math')) # hop la moyenne !
 
-    #notes_elv = [note for note in notes if note.eleve == eleve] if eleve is not None else notes
-    #notes_elv_matiere = [n for n in notes_elv if n.matiere == matiere] if matiere is not None else notes_elv
+    #notes_elv = [note for note in notes if note.eleve == eleve] 
+    #notes_elv_matiere = [n for n in notes_elv if n.matiere == matiere] 
 
     #return sum([n.valeur for n in notes_elv_matiere])/len(notes_elv_matiere)
