@@ -190,13 +190,13 @@ class Note:
   def moyenne(cls):
     return sum(n.valeur for n in cls.instances)/len(cls.instances)
 
-  @classmethod # marche pas :((
-  def moyennebis(cls, eleve, matiere):
+  @classmethod 
+  def moyennebis(cls, eleve=None, matiere=None):
     cls.eleve = eleve
     cls.matiere = matiere
     
-    notes_elv = [note for note in notes if cls.eleve == eleve] 
-    notes_elv_matiere = [n for n in notes_elv if cls.matiere == matiere] 
+    notes_elv = [note for note in notes if cls.eleve == eleve] if eleve is not None else notes
+    notes_elv_matiere = [n for n in notes_elv if cls.matiere == matiere] if matiere is not None else notes_elv
 
     return sum([n[2] for n in notes_elv_matiere])/len(notes_elv_matiere)
     
@@ -220,7 +220,7 @@ onotes = [Note(a,b,c) for a,b,c in notes] # on re-déclare
 print("Moyenne :")
 print(Note.moyenne()) # hop la moyenne !
 print("Moyenne élève1 math : ")
-print(Note.moyennebis('eleve1','math')) 
+print(Note.moyennebis(eleve = 'eleve1',matiere = 'math')) # renvoie la moyenne générale :(
 
     #notes_elv = [note for note in notes if note.eleve == eleve] 
     #notes_elv_matiere = [n for n in notes_elv if n.matiere == matiere] 
