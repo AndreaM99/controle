@@ -194,10 +194,11 @@ class Note:
   def moyennebis(cls, eleve, matiere):
     cls.eleve = eleve
     cls.matiere = matiere
-    notes_elv = [note for note in notes if note.eleve == cls.eleve] 
-    notes_elv_matiere = [n for n in notes_elv if n.matiere == cls.matiere] 
+    
+    notes_elv = [note for note in notes if cls.eleve == eleve] 
+    notes_elv_matiere = [n for n in notes_elv if cls.matiere == matiere] 
 
-    return sum([n.valeur for n in notes_elv_matiere])/len(notes_elv_matiere)
+    return sum([n for n in notes_elv_matiere])/len(notes_elv_matiere)
     
     
   @classmethod 
