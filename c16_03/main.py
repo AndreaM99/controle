@@ -192,7 +192,8 @@ class Note:
 
   @classmethod 
   def moyennebis(cls, eleve=None, matiere=None):
-    
+    cls.eleve = eleve
+    cls.matiere = matiere
     notes_elv = [note for note in cls.instances if note.eleve == eleve] if eleve is not None else cls.instances
     notes_elv_matiere = [n for n in cls.instances if n.matiere == matiere] if matiere is not None else notes_elv
 
