@@ -74,16 +74,16 @@ maths
 13
 eleve eleve1 matiere maths note 13
 eleve eleve1 matiere maths note 13
-[<c16_03.main.Note object at 0x7f7e028d09d0>, <c16_03.main.Note object at 0x7f7e028d0a30>, <c16_03.main.Note object at 0x7f7e028d0a90>, <c16_03.main.Note object at 0x7f7e028d0af0>, <c16_03.main.Note object at 0x7f7e028d0b50>, <c16_03.main.Note object at 0x7f7e028d0bb0>, <c16_03.main.Note object at 0x7f7e028d0c10>, <c16_03.main.Note object at 0x7f7e028d0c70>]
+[<c16_03.main.Note object at 0x7f522d1379d0>, <c16_03.main.Note object at 0x7f522d137a30>, <c16_03.main.Note object at 0x7f522d137a90>, <c16_03.main.Note object at 0x7f522d137af0>, <c16_03.main.Note object at 0x7f522d137b50>, <c16_03.main.Note object at 0x7f522d137bb0>, <c16_03.main.Note object at 0x7f522d137c10>, <c16_03.main.Note object at 0x7f522d137c70>]
 --
-<c16_03.main.Note object at 0x7f7e028d09d0>
-<c16_03.main.Note object at 0x7f7e028d0a30>
-<c16_03.main.Note object at 0x7f7e028d0a90>
-<c16_03.main.Note object at 0x7f7e028d0af0>
-<c16_03.main.Note object at 0x7f7e028d0b50>
-<c16_03.main.Note object at 0x7f7e028d0bb0>
-<c16_03.main.Note object at 0x7f7e028d0c10>
-<c16_03.main.Note object at 0x7f7e028d0c70>
+<c16_03.main.Note object at 0x7f522d1379d0>
+<c16_03.main.Note object at 0x7f522d137a30>
+<c16_03.main.Note object at 0x7f522d137a90>
+<c16_03.main.Note object at 0x7f522d137af0>
+<c16_03.main.Note object at 0x7f522d137b50>
+<c16_03.main.Note object at 0x7f522d137bb0>
+<c16_03.main.Note object at 0x7f522d137c10>
+<c16_03.main.Note object at 0x7f522d137c70>
 eleve eleve1 matiere math note 13
 eleve eleve1 matiere physique note 15
 eleve eleve1 matiere math note 13
@@ -100,7 +100,7 @@ Note('eleve1','maths','13')
 -- Question 7 --
 []
 Note('eleve1','math','13')
-[<c16_03.main.Note object at 0x7f7e028d0d00>]
+[<c16_03.main.Note object at 0x7f522d137d00>]
 -- Question 8 --
 13.125
 12.666666666666666
@@ -134,4 +134,4 @@ Moyenne en maths :
 13.0
 =========================== short test summary info ============================
 FAILED test_16_03.py::Test1603sute::test_10 - AssertionError: Probleme de par...
-========================= 1 failed, 6 passed in 0.07s ==========================
+========================= 1 failed, 6 passed in 0.19s ==========================
