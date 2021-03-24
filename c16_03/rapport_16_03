@@ -282,16 +282,16 @@ maths
 13
 eleve eleve1 matiere maths note 13
 eleve eleve1 matiere maths note 13
-[<c16_03.main.Note object at 0x7f07b3571970>, <c16_03.main.Note object at 0x7f07b35719d0>, <c16_03.main.Note object at 0x7f07b3571a30>, <c16_03.main.Note object at 0x7f07b3571a90>, <c16_03.main.Note object at 0x7f07b3571af0>, <c16_03.main.Note object at 0x7f07b3571b50>, <c16_03.main.Note object at 0x7f07b3571bb0>, <c16_03.main.Note object at 0x7f07b3571c10>]
+[<c16_03.main.Note object at 0x7f71f2ca39a0>, <c16_03.main.Note object at 0x7f71f2ca3a00>, <c16_03.main.Note object at 0x7f71f2ca3a60>, <c16_03.main.Note object at 0x7f71f2ca3ac0>, <c16_03.main.Note object at 0x7f71f2ca3b20>, <c16_03.main.Note object at 0x7f71f2ca3b80>, <c16_03.main.Note object at 0x7f71f2ca3be0>, <c16_03.main.Note object at 0x7f71f2ca3c40>]
 --
-<c16_03.main.Note object at 0x7f07b3571970>
-<c16_03.main.Note object at 0x7f07b35719d0>
-<c16_03.main.Note object at 0x7f07b3571a30>
-<c16_03.main.Note object at 0x7f07b3571a90>
-<c16_03.main.Note object at 0x7f07b3571af0>
-<c16_03.main.Note object at 0x7f07b3571b50>
-<c16_03.main.Note object at 0x7f07b3571bb0>
-<c16_03.main.Note object at 0x7f07b3571c10>
+<c16_03.main.Note object at 0x7f71f2ca39a0>
+<c16_03.main.Note object at 0x7f71f2ca3a00>
+<c16_03.main.Note object at 0x7f71f2ca3a60>
+<c16_03.main.Note object at 0x7f71f2ca3ac0>
+<c16_03.main.Note object at 0x7f71f2ca3b20>
+<c16_03.main.Note object at 0x7f71f2ca3b80>
+<c16_03.main.Note object at 0x7f71f2ca3be0>
+<c16_03.main.Note object at 0x7f71f2ca3c40>
 eleve eleve1 matiere math note 13
 eleve eleve1 matiere physique note 15
 eleve eleve1 matiere math note 13
@@ -308,7 +308,7 @@ Note('eleve1','maths','13')
 -- Question 7 --
 []
 Note('eleve1','math','13')
-[<c16_03.main.Note object at 0x7f07b3571ca0>]
+[<c16_03.main.Note object at 0x7f71f2ca3cd0>]
 -- Question 8 --
 13.125
 12.666666666666666
@@ -392,16 +392,16 @@ maths
 13
 eleve eleve1 matiere maths note 13
 eleve eleve1 matiere maths note 13
-[<c16_03.main.Note object at 0x7f07b3649280>, <c16_03.main.Note object at 0x7f07b3649f10>, <c16_03.main.Note object at 0x7f07b3649310>, <c16_03.main.Note object at 0x7f07b36492e0>, <c16_03.main.Note object at 0x7f07b3649f70>, <c16_03.main.Note object at 0x7f07b35f5be0>, <c16_03.main.Note object at 0x7f07b35f5a60>, <c16_03.main.Note object at 0x7f07b35f5fd0>]
+[<c16_03.main.Note object at 0x7f71f2d46be0>, <c16_03.main.Note object at 0x7f71f2d46cd0>, <c16_03.main.Note object at 0x7f71f2d46d00>, <c16_03.main.Note object at 0x7f71f2d46d30>, <c16_03.main.Note object at 0x7f71f2d46df0>, <c16_03.main.Note object at 0x7f71f2d46e50>, <c16_03.main.Note object at 0x7f71f2da0670>, <c16_03.main.Note object at 0x7f71f2da02b0>]
 --
-<c16_03.main.Note object at 0x7f07b3649280>
-<c16_03.main.Note object at 0x7f07b3649f10>
-<c16_03.main.Note object at 0x7f07b3649310>
-<c16_03.main.Note object at 0x7f07b36492e0>
-<c16_03.main.Note object at 0x7f07b3649f70>
-<c16_03.main.Note object at 0x7f07b35f5be0>
-<c16_03.main.Note object at 0x7f07b35f5a60>
-<c16_03.main.Note object at 0x7f07b35f5fd0>
+<c16_03.main.Note object at 0x7f71f2d46be0>
+<c16_03.main.Note object at 0x7f71f2d46cd0>
+<c16_03.main.Note object at 0x7f71f2d46d00>
+<c16_03.main.Note object at 0x7f71f2d46d30>
+<c16_03.main.Note object at 0x7f71f2d46df0>
+<c16_03.main.Note object at 0x7f71f2d46e50>
+<c16_03.main.Note object at 0x7f71f2da0670>
+<c16_03.main.Note object at 0x7f71f2da02b0>
 eleve eleve1 matiere math note 13
 eleve eleve1 matiere physique note 15
 eleve eleve1 matiere math note 13
@@ -418,7 +418,7 @@ Note('eleve1','maths','13')
 -- Question 7 --
 []
 Note('eleve1','math','13')
-[<c16_03.main.Note object at 0x7f07b35f5a30>]
+[<c16_03.main.Note object at 0x7f71f2da0fa0>]
 -- Question 8 --
 13.125
 12.666666666666666
@@ -721,16 +721,16 @@ maths
 13
 eleve eleve1 matiere maths note 13
 eleve eleve1 matiere maths note 13
-[<c16_03.main.Note object at 0x7f07b34d2e80>, <c16_03.main.Note object at 0x7f07b34d2d90>, <c16_03.main.Note object at 0x7f07b34d2f70>, <c16_03.main.Note object at 0x7f07b34d2e50>, <c16_03.main.Note object at 0x7f07b34d2dc0>, <c16_03.main.Note object at 0x7f07b34d2ac0>, <c16_03.main.Note object at 0x7f07b34d20a0>, <c16_03.main.Note object at 0x7f07b34d2a30>]
+[<c16_03.main.Note object at 0x7f71f2c04eb0>, <c16_03.main.Note object at 0x7f71f2c04f40>, <c16_03.main.Note object at 0x7f71f2c04d90>, <c16_03.main.Note object at 0x7f71f2d7b2e0>, <c16_03.main.Note object at 0x7f71f2d7beb0>, <c16_03.main.Note object at 0x7f71f2d7bf70>, <c16_03.main.Note object at 0x7f71f2d46310>, <c16_03.main.Note object at 0x7f71f2d468e0>]
 --
-<c16_03.main.Note object at 0x7f07b34d2e80>
-<c16_03.main.Note object at 0x7f07b34d2d90>
-<c16_03.main.Note object at 0x7f07b34d2f70>
-<c16_03.main.Note object at 0x7f07b34d2e50>
-<c16_03.main.Note object at 0x7f07b34d2dc0>
-<c16_03.main.Note object at 0x7f07b34d2ac0>
-<c16_03.main.Note object at 0x7f07b34d20a0>
-<c16_03.main.Note object at 0x7f07b34d2a30>
+<c16_03.main.Note object at 0x7f71f2c04eb0>
+<c16_03.main.Note object at 0x7f71f2c04f40>
+<c16_03.main.Note object at 0x7f71f2c04d90>
+<c16_03.main.Note object at 0x7f71f2d7b2e0>
+<c16_03.main.Note object at 0x7f71f2d7beb0>
+<c16_03.main.Note object at 0x7f71f2d7bf70>
+<c16_03.main.Note object at 0x7f71f2d46310>
+<c16_03.main.Note object at 0x7f71f2d468e0>
 eleve eleve1 matiere math note 13
 eleve eleve1 matiere physique note 15
 eleve eleve1 matiere math note 13
@@ -747,7 +747,7 @@ Note('eleve1','maths','13')
 -- Question 7 --
 []
 Note('eleve1','math','13')
-[<c16_03.main.Note object at 0x7f07b3649fd0>]
+[<c16_03.main.Note object at 0x7f71f2d46b80>]
 -- Question 8 --
 13.125
 12.666666666666666
@@ -816,16 +816,16 @@ maths
 13
 eleve eleve1 matiere maths note 13
 eleve eleve1 matiere maths note 13
-[<c16_03.main.Note object at 0x7f07b3612a00>, <c16_03.main.Note object at 0x7f07b3612b80>, <c16_03.main.Note object at 0x7f07b3612f70>, <c16_03.main.Note object at 0x7f07b36127f0>, <c16_03.main.Note object at 0x7f07b36121f0>, <c16_03.main.Note object at 0x7f07b36126d0>, <c16_03.main.Note object at 0x7f07b36125e0>, <c16_03.main.Note object at 0x7f07b3605c40>]
+[<c16_03.main.Note object at 0x7f71f2c05c40>, <c16_03.main.Note object at 0x7f71f2c05a60>, <c16_03.main.Note object at 0x7f71f2c05220>, <c16_03.main.Note object at 0x7f71f2c05190>, <c16_03.main.Note object at 0x7f71f2c05af0>, <c16_03.main.Note object at 0x7f71f2c05a30>, <c16_03.main.Note object at 0x7f71f2c05b50>, <c16_03.main.Note object at 0x7f71f2c08070>]
 --
-<c16_03.main.Note object at 0x7f07b3612a00>
-<c16_03.main.Note object at 0x7f07b3612b80>
-<c16_03.main.Note object at 0x7f07b3612f70>
-<c16_03.main.Note object at 0x7f07b36127f0>
-<c16_03.main.Note object at 0x7f07b36121f0>
-<c16_03.main.Note object at 0x7f07b36126d0>
-<c16_03.main.Note object at 0x7f07b36125e0>
-<c16_03.main.Note object at 0x7f07b3605c40>
+<c16_03.main.Note object at 0x7f71f2c05c40>
+<c16_03.main.Note object at 0x7f71f2c05a60>
+<c16_03.main.Note object at 0x7f71f2c05220>
+<c16_03.main.Note object at 0x7f71f2c05190>
+<c16_03.main.Note object at 0x7f71f2c05af0>
+<c16_03.main.Note object at 0x7f71f2c05a30>
+<c16_03.main.Note object at 0x7f71f2c05b50>
+<c16_03.main.Note object at 0x7f71f2c08070>
 eleve eleve1 matiere math note 13
 eleve eleve1 matiere physique note 15
 eleve eleve1 matiere math note 13
@@ -842,7 +842,7 @@ Note('eleve1','maths','13')
 -- Question 7 --
 []
 Note('eleve1','math','13')
-[<c16_03.main.Note object at 0x7f07b3605d30>]
+[<c16_03.main.Note object at 0x7f71f2c08e80>]
 -- Question 8 --
 13.125
 12.666666666666666
@@ -912,16 +912,16 @@ maths
 13
 eleve eleve1 matiere maths note 13
 eleve eleve1 matiere maths note 13
-[<c16_03.main.Note object at 0x7f07b36145b0>, <c16_03.main.Note object at 0x7f07b3614070>, <c16_03.main.Note object at 0x7f07b36144c0>, <c16_03.main.Note object at 0x7f07b3614a90>, <c16_03.main.Note object at 0x7f07b3614be0>, <c16_03.main.Note object at 0x7f07b3571b80>, <c16_03.main.Note object at 0x7f07b3571b50>, <c16_03.main.Note object at 0x7f07b35718e0>]
+[<c16_03.main.Note object at 0x7f71f2d44ca0>, <c16_03.main.Note object at 0x7f71f2d44490>, <c16_03.main.Note object at 0x7f71f2d44460>, <c16_03.main.Note object at 0x7f71f2d443d0>, <c16_03.main.Note object at 0x7f71f2d44520>, <c16_03.main.Note object at 0x7f71f2d44b80>, <c16_03.main.Note object at 0x7f71f2d44760>, <c16_03.main.Note object at 0x7f71f2d47670>]
 --
-<c16_03.main.Note object at 0x7f07b36145b0>
-<c16_03.main.Note object at 0x7f07b3614070>
-<c16_03.main.Note object at 0x7f07b36144c0>
-<c16_03.main.Note object at 0x7f07b3614a90>
-<c16_03.main.Note object at 0x7f07b3614be0>
-<c16_03.main.Note object at 0x7f07b3571b80>
-<c16_03.main.Note object at 0x7f07b3571b50>
-<c16_03.main.Note object at 0x7f07b35718e0>
+<c16_03.main.Note object at 0x7f71f2d44ca0>
+<c16_03.main.Note object at 0x7f71f2d44490>
+<c16_03.main.Note object at 0x7f71f2d44460>
+<c16_03.main.Note object at 0x7f71f2d443d0>
+<c16_03.main.Note object at 0x7f71f2d44520>
+<c16_03.main.Note object at 0x7f71f2d44b80>
+<c16_03.main.Note object at 0x7f71f2d44760>
+<c16_03.main.Note object at 0x7f71f2d47670>
 eleve eleve1 matiere math note 13
 eleve eleve1 matiere physique note 15
 eleve eleve1 matiere math note 13
@@ -938,7 +938,7 @@ Note('eleve1','maths','13')
 -- Question 7 --
 []
 Note('eleve1','math','13')
-[<c16_03.main.Note object at 0x7f07b3614df0>]
+[<c16_03.main.Note object at 0x7f71f2d44c40>]
 -- Question 8 --
 13.125
 12.666666666666666
@@ -1241,16 +1241,16 @@ maths
 13
 eleve eleve1 matiere maths note 13
 eleve eleve1 matiere maths note 13
-[<c16_03.main.Note object at 0x7f07b34ad5b0>, <c16_03.main.Note object at 0x7f07b34ad340>, <c16_03.main.Note object at 0x7f07b34ad280>, <c16_03.main.Note object at 0x7f07b34ade80>, <c16_03.main.Note object at 0x7f07b34addf0>, <c16_03.main.Note object at 0x7f07b34ad1f0>, <c16_03.main.Note object at 0x7f07b34ad2b0>, <c16_03.main.Note object at 0x7f07b34ad190>]
+[<c16_03.main.Note object at 0x7f71f2d263a0>, <c16_03.main.Note object at 0x7f71f2d26f40>, <c16_03.main.Note object at 0x7f71f2ca2550>, <c16_03.main.Note object at 0x7f71f2ca2400>, <c16_03.main.Note object at 0x7f71f2ca2430>, <c16_03.main.Note object at 0x7f71f2c06a90>, <c16_03.main.Note object at 0x7f71f2c06370>, <c16_03.main.Note object at 0x7f71f2c06310>]
 --
-<c16_03.main.Note object at 0x7f07b34ad5b0>
-<c16_03.main.Note object at 0x7f07b34ad340>
-<c16_03.main.Note object at 0x7f07b34ad280>
-<c16_03.main.Note object at 0x7f07b34ade80>
-<c16_03.main.Note object at 0x7f07b34addf0>
-<c16_03.main.Note object at 0x7f07b34ad1f0>
-<c16_03.main.Note object at 0x7f07b34ad2b0>
-<c16_03.main.Note object at 0x7f07b34ad190>
+<c16_03.main.Note object at 0x7f71f2d263a0>
+<c16_03.main.Note object at 0x7f71f2d26f40>
+<c16_03.main.Note object at 0x7f71f2ca2550>
+<c16_03.main.Note object at 0x7f71f2ca2400>
+<c16_03.main.Note object at 0x7f71f2ca2430>
+<c16_03.main.Note object at 0x7f71f2c06a90>
+<c16_03.main.Note object at 0x7f71f2c06370>
+<c16_03.main.Note object at 0x7f71f2c06310>
 eleve eleve1 matiere math note 13
 eleve eleve1 matiere physique note 15
 eleve eleve1 matiere math note 13
@@ -1267,7 +1267,7 @@ Note('eleve1','maths','13')
 -- Question 7 --
 []
 Note('eleve1','math','13')
-[<c16_03.main.Note object at 0x7f07b34ad8e0>]
+[<c16_03.main.Note object at 0x7f71f2d26160>]
 -- Question 8 --
 13.125
 12.666666666666666
@@ -1301,4 +1301,4 @@ FAILED test_16_03.py::Test1603sute::test_5 - AssertionError: assert False
 FAILED test_16_03.py::Test1603sute::test_6 - TypeError: unsupported operand t...
 FAILED test_16_03.py::Test1603sute::test_8 - TypeError: unsupported operand t...
 FAILED test_16_03.py::Test1603sute::test_9 - AssertionError: assert False
-========================= 6 failed, 1 passed in 0.12s ==========================
+========================= 6 failed, 1 passed in 0.13s ==========================
