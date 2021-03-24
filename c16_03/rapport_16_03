@@ -1,0 +1,1304 @@
+============================= test session starts ==============================
+platform linux -- Python 3.9.2, pytest-6.2.2, py-1.10.0, pluggy-0.13.1
+rootdir: /home/stidsem4/iut/2021/controle/andrea.masse/c16_03
+collected 7 items
+
+test_16_03.py F.FFFFF                                                    [100%]
+
+=================================== FAILURES ===================================
+_____________________________ Test1603sute.test_10 _____________________________
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_10>
+
+    def test_10(self):
+        try:
+>           from .main  import Note
+
+test_16_03.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    note1 = ('eleve1', 'math', 13)
+    note2 = ('eleve1', 'physique', 15)
+    note3 = ('eleve1', 'math', 13)
+    note4 = ('eleve1', 'eco', 12)
+    note5 = ('eleve1', 'eco', 13)
+    note6 = ('eleve1', 'math', 12)
+    note7 = ('eleve2', 'math', 13)
+    note8 = ('eleve2', 'math', 14)
+    
+    notes = [note1, note2, note3, note4, note5, note6,note7,note8]
+    
+    print("-- Question 4 a) --")
+    notes_elv1 = [note for note in notes if note[0] == 'eleve1']
+    print(notes_elv1)
+    print(sum(note[2] for note in notes_elv1)/len(notes_elv1))
+    
+    print("-- Question 4 b) --")
+    notes_elv1_maths = [n for n in notes_elv1 if n[1] == 'math']
+    print(notes_elv1_maths)
+    print(sum(n[2] for n in notes_elv1_maths)/len(notes_elv1_maths))
+    
+    print("-- Question 4 c) --")
+    def moyenne_tuple(notes, eleve, matiere):
+      notes_elv = [note for note in notes if note[0] == eleve]
+      notes_elv_matiere = [n for n in notes_elv if n[1] == matiere]
+      return sum([n[2] for n in notes_elv_matiere])/len(notes_elv_matiere)
+    
+    print(moyenne_tuple(notes,'eleve1','math'))
+    
+    def moyenne_tuplealt(notes, eleve = None, matiere = None):
+      notes_elv = [note for note in notes if note[0] == eleve] if eleve is not None else notes
+      notes_elv_matiere = [n for n in notes_elv if n[1] == matiere] if matiere is not None else notes_elv
+    
+      return sum([n[2] for n in notes_elv_matiere])/len(notes_elv_matiere)
+    
+    print(moyenne_tuplealt(notes)) # moyenne totale
+    print(moyenne_tuplealt(notes, 'eleve1', 'math'))
+    
+    print("-- Question 5 --")
+    class Note:
+      def __init__(self, eleve, matiere, valeur): #La méthode pour créer un objet
+        self.eleve = eleve
+        self.matiere = matiere
+        self.valeur = valeur
+    
+    
+      def afficher(self):
+        print('eleve', self.eleve, 'matiere', self.matiere, 'note', self.valeur)
+    
+    
+    onote = Note('eleve1', 'maths', 13)
+    print(onote.eleve)
+    print(onote.matiere)
+    print(onote.valeur)
+    Note.afficher(onote)
+    
+    onote.afficher()
+    
+    onotes = [Note(a,b,c) for a,b,c in notes]
+    print(onotes) # c'est moche...
+    print('--')
+    for onote in onotes:
+      print(onote) # toujours moche
+    
+    for onote in onotes:
+      onote.afficher() # beaucoup plus jolie ! merci afficher()
+    
+    print("-- Question 6 --")
+    class Note:
+      def __init__(self, eleve, matiere, valeur): #La méthode pour créer un objet
+        self.eleve = eleve
+        self.matiere = matiere
+        self.valeur = valeur
+    
+    
+      def __str__(self):
+        return f"{self.__class__.__name__}('{self.eleve}','{self.matiere}','{self.valeur}')"
+    
+    onote = Note('eleve1', 'maths', 13)
+    print(onote.eleve)
+    print(onote.matiere)
+    print(onote.valeur)
+    print(onote)
+    
+    print("-- Question 7 --")
+    notes_enregistrees = []
+    
+    class Note:
+      def __init__(self, eleve, matiere, valeur): #La méthode pour créer un objet
+        self.eleve = eleve
+        self.matiere = matiere
+        self.valeur = valeur
+        notes_enregistrees.append(self)
+    
+    
+      def __str__(self):
+        return f"{self.__class__.__name__}('{self.eleve}','{self.matiere}','{self.valeur}')"
+    
+    print(notes_enregistrees)
+    onote = Note('eleve1', 'math', 13)
+    print(onote)
+    print(notes_enregistrees)
+    
+    print("-- Question 8 --")
+    def moyenne_notes(notes, eleve = None, matiere = None):
+      notes_elv = [note for note in notes if note.eleve == eleve] if eleve is not None else notes
+      notes_elv_matiere = [n for n in notes_elv if n.matiere == matiere] if matiere is not None else notes_elv
+    
+      return sum([n.valeur for n in notes_elv_matiere])/len(notes_elv_matiere)
+    
+    onotes = [Note(a,b,c) for a,b,c in notes]
+    print(moyenne_notes(onotes))
+    print(moyenne_notes(onotes, 'eleve1', 'math'))
+    
+    print("-- Question 9 --")
+    class Demo:
+      classattr = 'defaut'
+      def __init__(self, a):
+        self.a = a
+    
+    
+    demo1 = Demo(1)
+    demo2 = Demo(2)
+    
+    print(demo1.a)
+    print(demo2.a)
+    print(Demo.classattr)
+    print(demo1.classattr)
+    print(demo2.classattr)
+    
+    Demo.classattr = 23
+    
+    print(demo1.classattr)
+    print(demo2.classattr)
+    
+    demo1.classattr = -1
+    
+    print(Demo.classattr)
+    print(demo1.classattr)
+    print(demo2.classattr)
+    
+    Demo.classattr = 14
+    
+    print(Demo.classattr)
+    print(demo1.classattr) # aïe toujours -1 :(
+    print(demo2.classattr)
+    
+    class Note:
+      instances = []
+      def __init__(self, eleve, matiere, valeur): #La méthode pour créer un objet
+        self.eleve = eleve
+        self.matiere = matiere
+        self.valeur = valeur
+    
+        self.instances.append(self)
+    
+      def __str__(self):
+        return f"{self.__class__.__name__}('{self.eleve}','{self.matiere}','{self.valeur}')"
+    
+      @classmethod
+      def default_len(cls):
+        return len(cls.instances)
+    
+    print(Note.default_len()) # 0
+    
+    onotes = [Note(a,b,c) for a,b,c in notes]
+    
+    print(Note.default_len()) # 8 notes différentes
+    
+    print("-- Question 10 --")
+    class Note:
+      instances = []
+      def __init__(self, eleve, matiere, valeur): #La méthode pour créer un objet
+        self.eleve = eleve
+        self.matiere = matiere
+        self.valeur = valeur
+    
+        self.instances.append(self) # les onotes sont enregistrés là
+    
+      def __str__(self):
+        return f"{self.__class__.__name__}('{self.eleve}','{self.matiere}','{self.valeur}')"
+    
+      @classmethod
+      def vider(cls):
+        cls.instances = []
+    
+      @classmethod
+      def moyenne(cls):
+        return sum(n.valeur for n in cls.instances)/len(cls.instances)
+    
+      @classmethod
+      def moyennebis(cls, eleve=None, matiere=None):
+    
+        notes_elv = [note for note in cls.instances if note.eleve == eleve] if eleve is not None else cls.instances
+        notes_elv_matiere = [n for n in cls.instances if n.matiere == matiere] if matiere is not None else notes_elv
+    
+        return sum([n.matiere for n in notes_elv_matiere])/len(notes_elv_matiere)
+    
+    
+      @classmethod
+      def default_len(cls):
+        return len(cls.instances)
+    
+    print(Note.default_len()) # 0
+    
+    onotes = [Note(eleve,matiere,valeur) for eleve,matiere,valeur in notes]
+    
+    print(Note.default_len()) # 8 notes différentes
+    
+    Note.vider() # on vide la liste
+    
+    print(Note.default_len()) # on retourne à 0
+    
+    onotes = [Note(a,b,c) for a,b,c in notes] # on re-déclare
+    
+    print("Moyenne :")
+    print(Note.moyenne()) # hop la moyenne !
+    print("Moyenne élève1 math : ")
+>   print(Note.moyennebis(eleve = 'eleve1',matiere = 'math')) # renvoie la moyenne générale :(
+
+main.py:221: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'c16_03.main.Note'>, eleve = 'eleve1', matiere = 'math'
+
+    @classmethod
+    def moyennebis(cls, eleve=None, matiere=None):
+    
+      notes_elv = [note for note in cls.instances if note.eleve == eleve] if eleve is not None else cls.instances
+      notes_elv_matiere = [n for n in cls.instances if n.matiere == matiere] if matiere is not None else notes_elv
+    
+>     return sum([n.matiere for n in notes_elv_matiere])/len(notes_elv_matiere)
+E     TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+main.py:199: TypeError
+
+During handling of the above exception, another exception occurred:
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_10>
+
+    def test_10(self):
+        try:
+            from .main  import Note
+        except:
+>          assert False
+E          AssertionError: assert False
+
+test_16_03.py:96: AssertionError
+----------------------------- Captured stdout call -----------------------------
+-- Question 4 a) --
+[('eleve1', 'math', 13), ('eleve1', 'physique', 15), ('eleve1', 'math', 13), ('eleve1', 'eco', 12), ('eleve1', 'eco', 13), ('eleve1', 'math', 12)]
+13.0
+-- Question 4 b) --
+[('eleve1', 'math', 13), ('eleve1', 'math', 13), ('eleve1', 'math', 12)]
+12.666666666666666
+-- Question 4 c) --
+12.666666666666666
+13.125
+12.666666666666666
+-- Question 5 --
+eleve1
+maths
+13
+eleve eleve1 matiere maths note 13
+eleve eleve1 matiere maths note 13
+[<c16_03.main.Note object at 0x7f71f2ca39a0>, <c16_03.main.Note object at 0x7f71f2ca3a00>, <c16_03.main.Note object at 0x7f71f2ca3a60>, <c16_03.main.Note object at 0x7f71f2ca3ac0>, <c16_03.main.Note object at 0x7f71f2ca3b20>, <c16_03.main.Note object at 0x7f71f2ca3b80>, <c16_03.main.Note object at 0x7f71f2ca3be0>, <c16_03.main.Note object at 0x7f71f2ca3c40>]
+--
+<c16_03.main.Note object at 0x7f71f2ca39a0>
+<c16_03.main.Note object at 0x7f71f2ca3a00>
+<c16_03.main.Note object at 0x7f71f2ca3a60>
+<c16_03.main.Note object at 0x7f71f2ca3ac0>
+<c16_03.main.Note object at 0x7f71f2ca3b20>
+<c16_03.main.Note object at 0x7f71f2ca3b80>
+<c16_03.main.Note object at 0x7f71f2ca3be0>
+<c16_03.main.Note object at 0x7f71f2ca3c40>
+eleve eleve1 matiere math note 13
+eleve eleve1 matiere physique note 15
+eleve eleve1 matiere math note 13
+eleve eleve1 matiere eco note 12
+eleve eleve1 matiere eco note 13
+eleve eleve1 matiere math note 12
+eleve eleve2 matiere math note 13
+eleve eleve2 matiere math note 14
+-- Question 6 --
+eleve1
+maths
+13
+Note('eleve1','maths','13')
+-- Question 7 --
+[]
+Note('eleve1','math','13')
+[<c16_03.main.Note object at 0x7f71f2ca3cd0>]
+-- Question 8 --
+13.125
+12.666666666666666
+-- Question 9 --
+1
+2
+defaut
+defaut
+defaut
+23
+23
+23
+-1
+23
+14
+-1
+14
+0
+8
+-- Question 10 --
+0
+8
+0
+Moyenne :
+13.125
+Moyenne élève1 math : 
+_____________________________ Test1603sute.test_4 ______________________________
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_4>
+
+    def test_4(self):
+        try:
+>           from main import moyenne_tuples
+E           ImportError: cannot import name 'moyenne_tuples' from 'main' (/home/stidsem4/iut/2021/controle/andrea.masse/main.py)
+
+test_16_03.py:16: ImportError
+
+During handling of the above exception, another exception occurred:
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_4>
+
+    def test_4(self):
+        try:
+            from main import moyenne_tuples
+        except ImportError:
+            try:
+>               from .main import moyenne_tuple as moyenne_tuples
+
+test_16_03.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+main.py:221: in <module>
+    print(Note.moyennebis(eleve = 'eleve1',matiere = 'math')) # renvoie la moyenne générale :(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'c16_03.main.Note'>, eleve = 'eleve1', matiere = 'math'
+
+    @classmethod
+    def moyennebis(cls, eleve=None, matiere=None):
+    
+      notes_elv = [note for note in cls.instances if note.eleve == eleve] if eleve is not None else cls.instances
+      notes_elv_matiere = [n for n in cls.instances if n.matiere == matiere] if matiere is not None else notes_elv
+    
+>     return sum([n.matiere for n in notes_elv_matiere])/len(notes_elv_matiere)
+E     TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+main.py:199: TypeError
+----------------------------- Captured stdout call -----------------------------
+-- Question 4 a) --
+[('eleve1', 'math', 13), ('eleve1', 'physique', 15), ('eleve1', 'math', 13), ('eleve1', 'eco', 12), ('eleve1', 'eco', 13), ('eleve1', 'math', 12)]
+13.0
+-- Question 4 b) --
+[('eleve1', 'math', 13), ('eleve1', 'math', 13), ('eleve1', 'math', 12)]
+12.666666666666666
+-- Question 4 c) --
+12.666666666666666
+13.125
+12.666666666666666
+-- Question 5 --
+eleve1
+maths
+13
+eleve eleve1 matiere maths note 13
+eleve eleve1 matiere maths note 13
+[<c16_03.main.Note object at 0x7f71f2d46be0>, <c16_03.main.Note object at 0x7f71f2d46cd0>, <c16_03.main.Note object at 0x7f71f2d46d00>, <c16_03.main.Note object at 0x7f71f2d46d30>, <c16_03.main.Note object at 0x7f71f2d46df0>, <c16_03.main.Note object at 0x7f71f2d46e50>, <c16_03.main.Note object at 0x7f71f2da0670>, <c16_03.main.Note object at 0x7f71f2da02b0>]
+--
+<c16_03.main.Note object at 0x7f71f2d46be0>
+<c16_03.main.Note object at 0x7f71f2d46cd0>
+<c16_03.main.Note object at 0x7f71f2d46d00>
+<c16_03.main.Note object at 0x7f71f2d46d30>
+<c16_03.main.Note object at 0x7f71f2d46df0>
+<c16_03.main.Note object at 0x7f71f2d46e50>
+<c16_03.main.Note object at 0x7f71f2da0670>
+<c16_03.main.Note object at 0x7f71f2da02b0>
+eleve eleve1 matiere math note 13
+eleve eleve1 matiere physique note 15
+eleve eleve1 matiere math note 13
+eleve eleve1 matiere eco note 12
+eleve eleve1 matiere eco note 13
+eleve eleve1 matiere math note 12
+eleve eleve2 matiere math note 13
+eleve eleve2 matiere math note 14
+-- Question 6 --
+eleve1
+maths
+13
+Note('eleve1','maths','13')
+-- Question 7 --
+[]
+Note('eleve1','math','13')
+[<c16_03.main.Note object at 0x7f71f2da0fa0>]
+-- Question 8 --
+13.125
+12.666666666666666
+-- Question 9 --
+1
+2
+defaut
+defaut
+defaut
+23
+23
+23
+-1
+23
+14
+-1
+14
+0
+8
+-- Question 10 --
+0
+8
+0
+Moyenne :
+13.125
+Moyenne élève1 math : 
+_____________________________ Test1603sute.test_5 ______________________________
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_5>
+
+    def test_5(self):
+        try:
+>           from .main  import Note, onotes
+
+test_16_03.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    note1 = ('eleve1', 'math', 13)
+    note2 = ('eleve1', 'physique', 15)
+    note3 = ('eleve1', 'math', 13)
+    note4 = ('eleve1', 'eco', 12)
+    note5 = ('eleve1', 'eco', 13)
+    note6 = ('eleve1', 'math', 12)
+    note7 = ('eleve2', 'math', 13)
+    note8 = ('eleve2', 'math', 14)
+    
+    notes = [note1, note2, note3, note4, note5, note6,note7,note8]
+    
+    print("-- Question 4 a) --")
+    notes_elv1 = [note for note in notes if note[0] == 'eleve1']
+    print(notes_elv1)
+    print(sum(note[2] for note in notes_elv1)/len(notes_elv1))
+    
+    print("-- Question 4 b) --")
+    notes_elv1_maths = [n for n in notes_elv1 if n[1] == 'math']
+    print(notes_elv1_maths)
+    print(sum(n[2] for n in notes_elv1_maths)/len(notes_elv1_maths))
+    
+    print("-- Question 4 c) --")
+    def moyenne_tuple(notes, eleve, matiere):
+      notes_elv = [note for note in notes if note[0] == eleve]
+      notes_elv_matiere = [n for n in notes_elv if n[1] == matiere]
+      return sum([n[2] for n in notes_elv_matiere])/len(notes_elv_matiere)
+    
+    print(moyenne_tuple(notes,'eleve1','math'))
+    
+    def moyenne_tuplealt(notes, eleve = None, matiere = None):
+      notes_elv = [note for note in notes if note[0] == eleve] if eleve is not None else notes
+      notes_elv_matiere = [n for n in notes_elv if n[1] == matiere] if matiere is not None else notes_elv
+    
+      return sum([n[2] for n in notes_elv_matiere])/len(notes_elv_matiere)
+    
+    print(moyenne_tuplealt(notes)) # moyenne totale
+    print(moyenne_tuplealt(notes, 'eleve1', 'math'))
+    
+    print("-- Question 5 --")
+    class Note:
+      def __init__(self, eleve, matiere, valeur): #La méthode pour créer un objet
+        self.eleve = eleve
+        self.matiere = matiere
+        self.valeur = valeur
+    
+    
+      def afficher(self):
+        print('eleve', self.eleve, 'matiere', self.matiere, 'note', self.valeur)
+    
+    
+    onote = Note('eleve1', 'maths', 13)
+    print(onote.eleve)
+    print(onote.matiere)
+    print(onote.valeur)
+    Note.afficher(onote)
+    
+    onote.afficher()
+    
+    onotes = [Note(a,b,c) for a,b,c in notes]
+    print(onotes) # c'est moche...
+    print('--')
+    for onote in onotes:
+      print(onote) # toujours moche
+    
+    for onote in onotes:
+      onote.afficher() # beaucoup plus jolie ! merci afficher()
+    
+    print("-- Question 6 --")
+    class Note:
+      def __init__(self, eleve, matiere, valeur): #La méthode pour créer un objet
+        self.eleve = eleve
+        self.matiere = matiere
+        self.valeur = valeur
+    
+    
+      def __str__(self):
+        return f"{self.__class__.__name__}('{self.eleve}','{self.matiere}','{self.valeur}')"
+    
+    onote = Note('eleve1', 'maths', 13)
+    print(onote.eleve)
+    print(onote.matiere)
+    print(onote.valeur)
+    print(onote)
+    
+    print("-- Question 7 --")
+    notes_enregistrees = []
+    
+    class Note:
+      def __init__(self, eleve, matiere, valeur): #La méthode pour créer un objet
+        self.eleve = eleve
+        self.matiere = matiere
+        self.valeur = valeur
+        notes_enregistrees.append(self)
+    
+    
+      def __str__(self):
+        return f"{self.__class__.__name__}('{self.eleve}','{self.matiere}','{self.valeur}')"
+    
+    print(notes_enregistrees)
+    onote = Note('eleve1', 'math', 13)
+    print(onote)
+    print(notes_enregistrees)
+    
+    print("-- Question 8 --")
+    def moyenne_notes(notes, eleve = None, matiere = None):
+      notes_elv = [note for note in notes if note.eleve == eleve] if eleve is not None else notes
+      notes_elv_matiere = [n for n in notes_elv if n.matiere == matiere] if matiere is not None else notes_elv
+    
+      return sum([n.valeur for n in notes_elv_matiere])/len(notes_elv_matiere)
+    
+    onotes = [Note(a,b,c) for a,b,c in notes]
+    print(moyenne_notes(onotes))
+    print(moyenne_notes(onotes, 'eleve1', 'math'))
+    
+    print("-- Question 9 --")
+    class Demo:
+      classattr = 'defaut'
+      def __init__(self, a):
+        self.a = a
+    
+    
+    demo1 = Demo(1)
+    demo2 = Demo(2)
+    
+    print(demo1.a)
+    print(demo2.a)
+    print(Demo.classattr)
+    print(demo1.classattr)
+    print(demo2.classattr)
+    
+    Demo.classattr = 23
+    
+    print(demo1.classattr)
+    print(demo2.classattr)
+    
+    demo1.classattr = -1
+    
+    print(Demo.classattr)
+    print(demo1.classattr)
+    print(demo2.classattr)
+    
+    Demo.classattr = 14
+    
+    print(Demo.classattr)
+    print(demo1.classattr) # aïe toujours -1 :(
+    print(demo2.classattr)
+    
+    class Note:
+      instances = []
+      def __init__(self, eleve, matiere, valeur): #La méthode pour créer un objet
+        self.eleve = eleve
+        self.matiere = matiere
+        self.valeur = valeur
+    
+        self.instances.append(self)
+    
+      def __str__(self):
+        return f"{self.__class__.__name__}('{self.eleve}','{self.matiere}','{self.valeur}')"
+    
+      @classmethod
+      def default_len(cls):
+        return len(cls.instances)
+    
+    print(Note.default_len()) # 0
+    
+    onotes = [Note(a,b,c) for a,b,c in notes]
+    
+    print(Note.default_len()) # 8 notes différentes
+    
+    print("-- Question 10 --")
+    class Note:
+      instances = []
+      def __init__(self, eleve, matiere, valeur): #La méthode pour créer un objet
+        self.eleve = eleve
+        self.matiere = matiere
+        self.valeur = valeur
+    
+        self.instances.append(self) # les onotes sont enregistrés là
+    
+      def __str__(self):
+        return f"{self.__class__.__name__}('{self.eleve}','{self.matiere}','{self.valeur}')"
+    
+      @classmethod
+      def vider(cls):
+        cls.instances = []
+    
+      @classmethod
+      def moyenne(cls):
+        return sum(n.valeur for n in cls.instances)/len(cls.instances)
+    
+      @classmethod
+      def moyennebis(cls, eleve=None, matiere=None):
+    
+        notes_elv = [note for note in cls.instances if note.eleve == eleve] if eleve is not None else cls.instances
+        notes_elv_matiere = [n for n in cls.instances if n.matiere == matiere] if matiere is not None else notes_elv
+    
+        return sum([n.matiere for n in notes_elv_matiere])/len(notes_elv_matiere)
+    
+    
+      @classmethod
+      def default_len(cls):
+        return len(cls.instances)
+    
+    print(Note.default_len()) # 0
+    
+    onotes = [Note(eleve,matiere,valeur) for eleve,matiere,valeur in notes]
+    
+    print(Note.default_len()) # 8 notes différentes
+    
+    Note.vider() # on vide la liste
+    
+    print(Note.default_len()) # on retourne à 0
+    
+    onotes = [Note(a,b,c) for a,b,c in notes] # on re-déclare
+    
+    print("Moyenne :")
+    print(Note.moyenne()) # hop la moyenne !
+    print("Moyenne élève1 math : ")
+>   print(Note.moyennebis(eleve = 'eleve1',matiere = 'math')) # renvoie la moyenne générale :(
+
+main.py:221: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'c16_03.main.Note'>, eleve = 'eleve1', matiere = 'math'
+
+    @classmethod
+    def moyennebis(cls, eleve=None, matiere=None):
+    
+      notes_elv = [note for note in cls.instances if note.eleve == eleve] if eleve is not None else cls.instances
+      notes_elv_matiere = [n for n in cls.instances if n.matiere == matiere] if matiere is not None else notes_elv
+    
+>     return sum([n.matiere for n in notes_elv_matiere])/len(notes_elv_matiere)
+E     TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+main.py:199: TypeError
+
+During handling of the above exception, another exception occurred:
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_5>
+
+    def test_5(self):
+        try:
+            from .main  import Note, onotes
+        except:
+>           assert False
+E           AssertionError: assert False
+
+test_16_03.py:35: AssertionError
+----------------------------- Captured stdout call -----------------------------
+-- Question 4 a) --
+[('eleve1', 'math', 13), ('eleve1', 'physique', 15), ('eleve1', 'math', 13), ('eleve1', 'eco', 12), ('eleve1', 'eco', 13), ('eleve1', 'math', 12)]
+13.0
+-- Question 4 b) --
+[('eleve1', 'math', 13), ('eleve1', 'math', 13), ('eleve1', 'math', 12)]
+12.666666666666666
+-- Question 4 c) --
+12.666666666666666
+13.125
+12.666666666666666
+-- Question 5 --
+eleve1
+maths
+13
+eleve eleve1 matiere maths note 13
+eleve eleve1 matiere maths note 13
+[<c16_03.main.Note object at 0x7f71f2c04eb0>, <c16_03.main.Note object at 0x7f71f2c04f40>, <c16_03.main.Note object at 0x7f71f2c04d90>, <c16_03.main.Note object at 0x7f71f2d7b2e0>, <c16_03.main.Note object at 0x7f71f2d7beb0>, <c16_03.main.Note object at 0x7f71f2d7bf70>, <c16_03.main.Note object at 0x7f71f2d46310>, <c16_03.main.Note object at 0x7f71f2d468e0>]
+--
+<c16_03.main.Note object at 0x7f71f2c04eb0>
+<c16_03.main.Note object at 0x7f71f2c04f40>
+<c16_03.main.Note object at 0x7f71f2c04d90>
+<c16_03.main.Note object at 0x7f71f2d7b2e0>
+<c16_03.main.Note object at 0x7f71f2d7beb0>
+<c16_03.main.Note object at 0x7f71f2d7bf70>
+<c16_03.main.Note object at 0x7f71f2d46310>
+<c16_03.main.Note object at 0x7f71f2d468e0>
+eleve eleve1 matiere math note 13
+eleve eleve1 matiere physique note 15
+eleve eleve1 matiere math note 13
+eleve eleve1 matiere eco note 12
+eleve eleve1 matiere eco note 13
+eleve eleve1 matiere math note 12
+eleve eleve2 matiere math note 13
+eleve eleve2 matiere math note 14
+-- Question 6 --
+eleve1
+maths
+13
+Note('eleve1','maths','13')
+-- Question 7 --
+[]
+Note('eleve1','math','13')
+[<c16_03.main.Note object at 0x7f71f2d46b80>]
+-- Question 8 --
+13.125
+12.666666666666666
+-- Question 9 --
+1
+2
+defaut
+defaut
+defaut
+23
+23
+23
+-1
+23
+14
+-1
+14
+0
+8
+-- Question 10 --
+0
+8
+0
+Moyenne :
+13.125
+Moyenne élève1 math : 
+_____________________________ Test1603sute.test_6 ______________________________
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_6>
+
+    def test_6(self):
+>       from .main import Note, onotes
+
+test_16_03.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+main.py:221: in <module>
+    print(Note.moyennebis(eleve = 'eleve1',matiere = 'math')) # renvoie la moyenne générale :(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'c16_03.main.Note'>, eleve = 'eleve1', matiere = 'math'
+
+    @classmethod
+    def moyennebis(cls, eleve=None, matiere=None):
+    
+      notes_elv = [note for note in cls.instances if note.eleve == eleve] if eleve is not None else cls.instances
+      notes_elv_matiere = [n for n in cls.instances if n.matiere == matiere] if matiere is not None else notes_elv
+    
+>     return sum([n.matiere for n in notes_elv_matiere])/len(notes_elv_matiere)
+E     TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+main.py:199: TypeError
+----------------------------- Captured stdout call -----------------------------
+-- Question 4 a) --
+[('eleve1', 'math', 13), ('eleve1', 'physique', 15), ('eleve1', 'math', 13), ('eleve1', 'eco', 12), ('eleve1', 'eco', 13), ('eleve1', 'math', 12)]
+13.0
+-- Question 4 b) --
+[('eleve1', 'math', 13), ('eleve1', 'math', 13), ('eleve1', 'math', 12)]
+12.666666666666666
+-- Question 4 c) --
+12.666666666666666
+13.125
+12.666666666666666
+-- Question 5 --
+eleve1
+maths
+13
+eleve eleve1 matiere maths note 13
+eleve eleve1 matiere maths note 13
+[<c16_03.main.Note object at 0x7f71f2c05c40>, <c16_03.main.Note object at 0x7f71f2c05a60>, <c16_03.main.Note object at 0x7f71f2c05220>, <c16_03.main.Note object at 0x7f71f2c05190>, <c16_03.main.Note object at 0x7f71f2c05af0>, <c16_03.main.Note object at 0x7f71f2c05a30>, <c16_03.main.Note object at 0x7f71f2c05b50>, <c16_03.main.Note object at 0x7f71f2c08070>]
+--
+<c16_03.main.Note object at 0x7f71f2c05c40>
+<c16_03.main.Note object at 0x7f71f2c05a60>
+<c16_03.main.Note object at 0x7f71f2c05220>
+<c16_03.main.Note object at 0x7f71f2c05190>
+<c16_03.main.Note object at 0x7f71f2c05af0>
+<c16_03.main.Note object at 0x7f71f2c05a30>
+<c16_03.main.Note object at 0x7f71f2c05b50>
+<c16_03.main.Note object at 0x7f71f2c08070>
+eleve eleve1 matiere math note 13
+eleve eleve1 matiere physique note 15
+eleve eleve1 matiere math note 13
+eleve eleve1 matiere eco note 12
+eleve eleve1 matiere eco note 13
+eleve eleve1 matiere math note 12
+eleve eleve2 matiere math note 13
+eleve eleve2 matiere math note 14
+-- Question 6 --
+eleve1
+maths
+13
+Note('eleve1','maths','13')
+-- Question 7 --
+[]
+Note('eleve1','math','13')
+[<c16_03.main.Note object at 0x7f71f2c08e80>]
+-- Question 8 --
+13.125
+12.666666666666666
+-- Question 9 --
+1
+2
+defaut
+defaut
+defaut
+23
+23
+23
+-1
+23
+14
+-1
+14
+0
+8
+-- Question 10 --
+0
+8
+0
+Moyenne :
+13.125
+Moyenne élève1 math : 
+_____________________________ Test1603sute.test_8 ______________________________
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_8>
+
+    def test_8(self):
+        try:
+>           from .main import Note
+
+test_16_03.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+main.py:221: in <module>
+    print(Note.moyennebis(eleve = 'eleve1',matiere = 'math')) # renvoie la moyenne générale :(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'c16_03.main.Note'>, eleve = 'eleve1', matiere = 'math'
+
+    @classmethod
+    def moyennebis(cls, eleve=None, matiere=None):
+    
+      notes_elv = [note for note in cls.instances if note.eleve == eleve] if eleve is not None else cls.instances
+      notes_elv_matiere = [n for n in cls.instances if n.matiere == matiere] if matiere is not None else notes_elv
+    
+>     return sum([n.matiere for n in notes_elv_matiere])/len(notes_elv_matiere)
+E     TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+main.py:199: TypeError
+----------------------------- Captured stdout call -----------------------------
+-- Question 4 a) --
+[('eleve1', 'math', 13), ('eleve1', 'physique', 15), ('eleve1', 'math', 13), ('eleve1', 'eco', 12), ('eleve1', 'eco', 13), ('eleve1', 'math', 12)]
+13.0
+-- Question 4 b) --
+[('eleve1', 'math', 13), ('eleve1', 'math', 13), ('eleve1', 'math', 12)]
+12.666666666666666
+-- Question 4 c) --
+12.666666666666666
+13.125
+12.666666666666666
+-- Question 5 --
+eleve1
+maths
+13
+eleve eleve1 matiere maths note 13
+eleve eleve1 matiere maths note 13
+[<c16_03.main.Note object at 0x7f71f2d44ca0>, <c16_03.main.Note object at 0x7f71f2d44490>, <c16_03.main.Note object at 0x7f71f2d44460>, <c16_03.main.Note object at 0x7f71f2d443d0>, <c16_03.main.Note object at 0x7f71f2d44520>, <c16_03.main.Note object at 0x7f71f2d44b80>, <c16_03.main.Note object at 0x7f71f2d44760>, <c16_03.main.Note object at 0x7f71f2d47670>]
+--
+<c16_03.main.Note object at 0x7f71f2d44ca0>
+<c16_03.main.Note object at 0x7f71f2d44490>
+<c16_03.main.Note object at 0x7f71f2d44460>
+<c16_03.main.Note object at 0x7f71f2d443d0>
+<c16_03.main.Note object at 0x7f71f2d44520>
+<c16_03.main.Note object at 0x7f71f2d44b80>
+<c16_03.main.Note object at 0x7f71f2d44760>
+<c16_03.main.Note object at 0x7f71f2d47670>
+eleve eleve1 matiere math note 13
+eleve eleve1 matiere physique note 15
+eleve eleve1 matiere math note 13
+eleve eleve1 matiere eco note 12
+eleve eleve1 matiere eco note 13
+eleve eleve1 matiere math note 12
+eleve eleve2 matiere math note 13
+eleve eleve2 matiere math note 14
+-- Question 6 --
+eleve1
+maths
+13
+Note('eleve1','maths','13')
+-- Question 7 --
+[]
+Note('eleve1','math','13')
+[<c16_03.main.Note object at 0x7f71f2d44c40>]
+-- Question 8 --
+13.125
+12.666666666666666
+-- Question 9 --
+1
+2
+defaut
+defaut
+defaut
+23
+23
+23
+-1
+23
+14
+-1
+14
+0
+8
+-- Question 10 --
+0
+8
+0
+Moyenne :
+13.125
+Moyenne élève1 math : 
+_____________________________ Test1603sute.test_9 ______________________________
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_9>
+
+    def test_9(self):
+        try:
+>           from .main  import Note
+
+test_16_03.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    note1 = ('eleve1', 'math', 13)
+    note2 = ('eleve1', 'physique', 15)
+    note3 = ('eleve1', 'math', 13)
+    note4 = ('eleve1', 'eco', 12)
+    note5 = ('eleve1', 'eco', 13)
+    note6 = ('eleve1', 'math', 12)
+    note7 = ('eleve2', 'math', 13)
+    note8 = ('eleve2', 'math', 14)
+    
+    notes = [note1, note2, note3, note4, note5, note6,note7,note8]
+    
+    print("-- Question 4 a) --")
+    notes_elv1 = [note for note in notes if note[0] == 'eleve1']
+    print(notes_elv1)
+    print(sum(note[2] for note in notes_elv1)/len(notes_elv1))
+    
+    print("-- Question 4 b) --")
+    notes_elv1_maths = [n for n in notes_elv1 if n[1] == 'math']
+    print(notes_elv1_maths)
+    print(sum(n[2] for n in notes_elv1_maths)/len(notes_elv1_maths))
+    
+    print("-- Question 4 c) --")
+    def moyenne_tuple(notes, eleve, matiere):
+      notes_elv = [note for note in notes if note[0] == eleve]
+      notes_elv_matiere = [n for n in notes_elv if n[1] == matiere]
+      return sum([n[2] for n in notes_elv_matiere])/len(notes_elv_matiere)
+    
+    print(moyenne_tuple(notes,'eleve1','math'))
+    
+    def moyenne_tuplealt(notes, eleve = None, matiere = None):
+      notes_elv = [note for note in notes if note[0] == eleve] if eleve is not None else notes
+      notes_elv_matiere = [n for n in notes_elv if n[1] == matiere] if matiere is not None else notes_elv
+    
+      return sum([n[2] for n in notes_elv_matiere])/len(notes_elv_matiere)
+    
+    print(moyenne_tuplealt(notes)) # moyenne totale
+    print(moyenne_tuplealt(notes, 'eleve1', 'math'))
+    
+    print("-- Question 5 --")
+    class Note:
+      def __init__(self, eleve, matiere, valeur): #La méthode pour créer un objet
+        self.eleve = eleve
+        self.matiere = matiere
+        self.valeur = valeur
+    
+    
+      def afficher(self):
+        print('eleve', self.eleve, 'matiere', self.matiere, 'note', self.valeur)
+    
+    
+    onote = Note('eleve1', 'maths', 13)
+    print(onote.eleve)
+    print(onote.matiere)
+    print(onote.valeur)
+    Note.afficher(onote)
+    
+    onote.afficher()
+    
+    onotes = [Note(a,b,c) for a,b,c in notes]
+    print(onotes) # c'est moche...
+    print('--')
+    for onote in onotes:
+      print(onote) # toujours moche
+    
+    for onote in onotes:
+      onote.afficher() # beaucoup plus jolie ! merci afficher()
+    
+    print("-- Question 6 --")
+    class Note:
+      def __init__(self, eleve, matiere, valeur): #La méthode pour créer un objet
+        self.eleve = eleve
+        self.matiere = matiere
+        self.valeur = valeur
+    
+    
+      def __str__(self):
+        return f"{self.__class__.__name__}('{self.eleve}','{self.matiere}','{self.valeur}')"
+    
+    onote = Note('eleve1', 'maths', 13)
+    print(onote.eleve)
+    print(onote.matiere)
+    print(onote.valeur)
+    print(onote)
+    
+    print("-- Question 7 --")
+    notes_enregistrees = []
+    
+    class Note:
+      def __init__(self, eleve, matiere, valeur): #La méthode pour créer un objet
+        self.eleve = eleve
+        self.matiere = matiere
+        self.valeur = valeur
+        notes_enregistrees.append(self)
+    
+    
+      def __str__(self):
+        return f"{self.__class__.__name__}('{self.eleve}','{self.matiere}','{self.valeur}')"
+    
+    print(notes_enregistrees)
+    onote = Note('eleve1', 'math', 13)
+    print(onote)
+    print(notes_enregistrees)
+    
+    print("-- Question 8 --")
+    def moyenne_notes(notes, eleve = None, matiere = None):
+      notes_elv = [note for note in notes if note.eleve == eleve] if eleve is not None else notes
+      notes_elv_matiere = [n for n in notes_elv if n.matiere == matiere] if matiere is not None else notes_elv
+    
+      return sum([n.valeur for n in notes_elv_matiere])/len(notes_elv_matiere)
+    
+    onotes = [Note(a,b,c) for a,b,c in notes]
+    print(moyenne_notes(onotes))
+    print(moyenne_notes(onotes, 'eleve1', 'math'))
+    
+    print("-- Question 9 --")
+    class Demo:
+      classattr = 'defaut'
+      def __init__(self, a):
+        self.a = a
+    
+    
+    demo1 = Demo(1)
+    demo2 = Demo(2)
+    
+    print(demo1.a)
+    print(demo2.a)
+    print(Demo.classattr)
+    print(demo1.classattr)
+    print(demo2.classattr)
+    
+    Demo.classattr = 23
+    
+    print(demo1.classattr)
+    print(demo2.classattr)
+    
+    demo1.classattr = -1
+    
+    print(Demo.classattr)
+    print(demo1.classattr)
+    print(demo2.classattr)
+    
+    Demo.classattr = 14
+    
+    print(Demo.classattr)
+    print(demo1.classattr) # aïe toujours -1 :(
+    print(demo2.classattr)
+    
+    class Note:
+      instances = []
+      def __init__(self, eleve, matiere, valeur): #La méthode pour créer un objet
+        self.eleve = eleve
+        self.matiere = matiere
+        self.valeur = valeur
+    
+        self.instances.append(self)
+    
+      def __str__(self):
+        return f"{self.__class__.__name__}('{self.eleve}','{self.matiere}','{self.valeur}')"
+    
+      @classmethod
+      def default_len(cls):
+        return len(cls.instances)
+    
+    print(Note.default_len()) # 0
+    
+    onotes = [Note(a,b,c) for a,b,c in notes]
+    
+    print(Note.default_len()) # 8 notes différentes
+    
+    print("-- Question 10 --")
+    class Note:
+      instances = []
+      def __init__(self, eleve, matiere, valeur): #La méthode pour créer un objet
+        self.eleve = eleve
+        self.matiere = matiere
+        self.valeur = valeur
+    
+        self.instances.append(self) # les onotes sont enregistrés là
+    
+      def __str__(self):
+        return f"{self.__class__.__name__}('{self.eleve}','{self.matiere}','{self.valeur}')"
+    
+      @classmethod
+      def vider(cls):
+        cls.instances = []
+    
+      @classmethod
+      def moyenne(cls):
+        return sum(n.valeur for n in cls.instances)/len(cls.instances)
+    
+      @classmethod
+      def moyennebis(cls, eleve=None, matiere=None):
+    
+        notes_elv = [note for note in cls.instances if note.eleve == eleve] if eleve is not None else cls.instances
+        notes_elv_matiere = [n for n in cls.instances if n.matiere == matiere] if matiere is not None else notes_elv
+    
+        return sum([n.matiere for n in notes_elv_matiere])/len(notes_elv_matiere)
+    
+    
+      @classmethod
+      def default_len(cls):
+        return len(cls.instances)
+    
+    print(Note.default_len()) # 0
+    
+    onotes = [Note(eleve,matiere,valeur) for eleve,matiere,valeur in notes]
+    
+    print(Note.default_len()) # 8 notes différentes
+    
+    Note.vider() # on vide la liste
+    
+    print(Note.default_len()) # on retourne à 0
+    
+    onotes = [Note(a,b,c) for a,b,c in notes] # on re-déclare
+    
+    print("Moyenne :")
+    print(Note.moyenne()) # hop la moyenne !
+    print("Moyenne élève1 math : ")
+>   print(Note.moyennebis(eleve = 'eleve1',matiere = 'math')) # renvoie la moyenne générale :(
+
+main.py:221: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'c16_03.main.Note'>, eleve = 'eleve1', matiere = 'math'
+
+    @classmethod
+    def moyennebis(cls, eleve=None, matiere=None):
+    
+      notes_elv = [note for note in cls.instances if note.eleve == eleve] if eleve is not None else cls.instances
+      notes_elv_matiere = [n for n in cls.instances if n.matiere == matiere] if matiere is not None else notes_elv
+    
+>     return sum([n.matiere for n in notes_elv_matiere])/len(notes_elv_matiere)
+E     TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+main.py:199: TypeError
+
+During handling of the above exception, another exception occurred:
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_9>
+
+    def test_9(self):
+        try:
+            from .main  import Note
+        except:
+>          assert False
+E          AssertionError: assert False
+
+test_16_03.py:89: AssertionError
+----------------------------- Captured stdout call -----------------------------
+-- Question 4 a) --
+[('eleve1', 'math', 13), ('eleve1', 'physique', 15), ('eleve1', 'math', 13), ('eleve1', 'eco', 12), ('eleve1', 'eco', 13), ('eleve1', 'math', 12)]
+13.0
+-- Question 4 b) --
+[('eleve1', 'math', 13), ('eleve1', 'math', 13), ('eleve1', 'math', 12)]
+12.666666666666666
+-- Question 4 c) --
+12.666666666666666
+13.125
+12.666666666666666
+-- Question 5 --
+eleve1
+maths
+13
+eleve eleve1 matiere maths note 13
+eleve eleve1 matiere maths note 13
+[<c16_03.main.Note object at 0x7f71f2d263a0>, <c16_03.main.Note object at 0x7f71f2d26f40>, <c16_03.main.Note object at 0x7f71f2ca2550>, <c16_03.main.Note object at 0x7f71f2ca2400>, <c16_03.main.Note object at 0x7f71f2ca2430>, <c16_03.main.Note object at 0x7f71f2c06a90>, <c16_03.main.Note object at 0x7f71f2c06370>, <c16_03.main.Note object at 0x7f71f2c06310>]
+--
+<c16_03.main.Note object at 0x7f71f2d263a0>
+<c16_03.main.Note object at 0x7f71f2d26f40>
+<c16_03.main.Note object at 0x7f71f2ca2550>
+<c16_03.main.Note object at 0x7f71f2ca2400>
+<c16_03.main.Note object at 0x7f71f2ca2430>
+<c16_03.main.Note object at 0x7f71f2c06a90>
+<c16_03.main.Note object at 0x7f71f2c06370>
+<c16_03.main.Note object at 0x7f71f2c06310>
+eleve eleve1 matiere math note 13
+eleve eleve1 matiere physique note 15
+eleve eleve1 matiere math note 13
+eleve eleve1 matiere eco note 12
+eleve eleve1 matiere eco note 13
+eleve eleve1 matiere math note 12
+eleve eleve2 matiere math note 13
+eleve eleve2 matiere math note 14
+-- Question 6 --
+eleve1
+maths
+13
+Note('eleve1','maths','13')
+-- Question 7 --
+[]
+Note('eleve1','math','13')
+[<c16_03.main.Note object at 0x7f71f2d26160>]
+-- Question 8 --
+13.125
+12.666666666666666
+-- Question 9 --
+1
+2
+defaut
+defaut
+defaut
+23
+23
+23
+-1
+23
+14
+-1
+14
+0
+8
+-- Question 10 --
+0
+8
+0
+Moyenne :
+13.125
+Moyenne élève1 math : 
+=========================== short test summary info ============================
+FAILED test_16_03.py::Test1603sute::test_10 - AssertionError: assert False
+FAILED test_16_03.py::Test1603sute::test_4 - TypeError: unsupported operand t...
+FAILED test_16_03.py::Test1603sute::test_5 - AssertionError: assert False
+FAILED test_16_03.py::Test1603sute::test_6 - TypeError: unsupported operand t...
+FAILED test_16_03.py::Test1603sute::test_8 - TypeError: unsupported operand t...
+FAILED test_16_03.py::Test1603sute::test_9 - AssertionError: assert False
+========================= 6 failed, 1 passed in 0.13s ==========================
