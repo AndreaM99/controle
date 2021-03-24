@@ -195,7 +195,7 @@ class Note:
     cls.eleve = eleve
     cls.matiere = matiere
     notes_elv = [note for note in cls.instances if note.eleve == eleve] if eleve is not None else cls.instances
-    notes_elv_matiere = [n for n in cls.instances if n.matiere == matiere] if matiere is not None else notes_elv
+    notes_elv_matiere = [n for n in notes_elv if n.matiere == matiere] if matiere is not None else notes_elv
 
     return sum([n.valeur for n in notes_elv_matiere])/len(notes_elv_matiere)
     
@@ -222,5 +222,7 @@ print("Moyenne avec moyennebis : ")
 print(Note.moyennebis(eleve = None,matiere = None)) # donne la moyenne général
 print("Moyenne eleve1 en maths :")
 print(Note.moyennebis(eleve = 'eleve1', matiere = 'math'))
+print("Moyenne en maths :")
+print(Note.moyennebis(eleve = None, matiere = 'math'))
 
 
