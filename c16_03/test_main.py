@@ -9,6 +9,7 @@ def test_ajout():
   Note(eleve = 'eleve1', matiere='math', valeur = 12) # quand on commence des mots clés, on les continu !! + Note pas Node.
   assert len(Note.instances) == 1
   Note.moyenne()
+  Note.moyennebis()
 
 
 # pip install pytest-cov
